@@ -133,7 +133,7 @@ export default function About() {
                                     <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">01</span>
                                     <div>
                                         <h3 className="text-hover font-normal font-primary text-lg">КОСМЕТИЧЕСКАЯ КИСТЬ</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">опп</p>
+                                        <p className="text-sm mt-1 font-primary text-gray-300">Версия кисти с тугоподвижными пальцами. Изготавливается под индивидуальные мерки, с подбором уникальной геометрии под каждого пользователя.</p>
                                         </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@ export default function About() {
                                     <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">02</span>
                                     <div>
                                         <h3 className="text-hover font-normal font-primary text-lg">БЫСТРОСЪЕМНОЕ ЗАПЯСТЬЕ</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">Lorem ipsum dolor sit amet, consectетuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean масса.</p>
+                                        <p className="text-sm mt-1 font-primary text-gray-300">Версия кисти с тугоподвижными пальцами. Изготавливается под индивидуальные мерки, с подбором уникальной геометрии под каждого пользователя.</p>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ export default function About() {
                                     <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">03</span>
                                     <div>
                                         <h3 className="text-hover font-normal font-primary text-lg">РОТАЦИЯ ЗАПЯСТЬЯ НА 360</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">Lorem ipsum dolor sit amet, consectетuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean масса.</p>
+                                        <p className="text-sm mt-1 font-primary text-gray-300">Система быстросъемного запястья, позволяющая переключаться между биоэлектрической грейферной кистью и косметической пятипалой.</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@ export default function About() {
 
                         {/* Image at bottom on mobile */}
                         <div className="mt-8 flex justify-center">
-                            <img src="./img/4.png" alt="Рука" className="w-full max-w-sm h-64 object-contain" />
+                            <img src="./img/cosmetic.png" alt="Рука" className="w-full max-w-sm h-64 object-contain" />
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@ export default function About() {
                         <div className="grid grid-cols-[1fr_auto_1fr] grid-rows-3 gap-y-6 mt-16 items-center">
                             {/* Photo spans rows */}
                             <div className="row-span-3 flex items-end justify-center self-end overflow-hidden">
-                                <img src="./img/4.png" alt="Рука" className="w-[200%] sm:w-[140%] md:w-full h-[42rem] md:h-[48rem] object-bottom" />
+                                <img src="./img/cosmetic.png" alt="Рука" className="w-[200%] sm:w-[140%] md:w-full h-[42rem] md:h-[48rem] object-bottom" />
                             </div>
                             {/* Row 1: arrow from middle to left + right box */}
                             <div className="justify-self-center self-center flex items-center">

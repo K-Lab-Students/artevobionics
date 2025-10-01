@@ -147,13 +147,11 @@ export default function Home() {
             <section className="bg-second text-white py-12 sm:py-16">
                 <div className="container mx-auto flex flex-col items-center px-4">
                     <img 
-                        src="/img/news/titanfall.jpg" 
+                        src="/img/team.jpg" 
                         alt="Общее фото команды" 
-                        className="w-full max-w-4xl h-48 sm:h-64 md:h-80 object-cover shadow-md mb-6 sm:mb-8 rounded-lg"
+                        className="w-1/2 max-w-4xl h-48 sm:h-64 md:h-80 object-cover shadow-md mb-6 sm:mb-8 rounded-lg"
                     />
-                    <h2 className="text-lg sm:text-xl font-normal font-primary text-white text-center">
-                        ОБЩЕЕ ФОТО КОМАНДЫ
-                    </h2>
+                    
                 </div>
             </section>
 
