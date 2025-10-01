@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../public/img/media/fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("../public/img/media/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url("../public/img/media/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("../public/img/media/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat SemiBold";
+    src: url("../public/img/media/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+
+
+
+@font-face {
+    font-family: "Myriad Pro Regular";
+    src: url("./assets/fonts/MyriadPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Wadik";
+    src: url("./assets/fonts/Wadik.otf") format("opentype");
+}
+
+@theme {
+    --font-primary: "Montserrat Regular", "sans-serif";
+    --font-second: "Wadik", "sans-serif";
+
+    --color-primary: #1d1d1b;
+    --color-second: #333333;
+    --color-hover: #fff9b3;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8A8A89;
+    background: radial-gradient(circle,
+    rgba(138, 138, 137, 1) 0%, 
+    rgba(29, 29, 27, 1) 100%);
+    z-index: 1;
+}
+
+.gradient_section {
+    background: linear-gradient(180deg,rgba(2, 2, 2, 1) 0%, rgba(33, 33, 31, 1) 100%);
+}
+
+.gradient_section_revers {
+    background: linear-gradient(360deg,rgba(2, 2, 2, 1) 0%, rgba(28, 28, 26, 1) 100%);
+}
+
+.clip-path-1 {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
+.clip-path-2 {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+.clip-path-3 {
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Global layout fixes */
+html, body, #root {
+    min-height: 100%;
+    background-color: #1d1d1b; /* matches --color-primary */
+}
+
+html, body {
+    overflow-x: hidden; /* prevent white bars on sides */
+}
+
+/* Reduce bounce/overscroll glow */
+body {
+    overscroll-behavior: none;
+}
