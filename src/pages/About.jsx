@@ -6,6 +6,8 @@ export default function About() {
     const [isVisible, setIsVisible] = useState(false);
     const [activePoint, setActivePoint] = useState(null);
     const videoRef = useRef(null);
+    const cosmeticSectionRef = useRef(null);
+    const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
 
     const points = [
         {
@@ -50,6 +52,14 @@ export default function About() {
         return () => clearTimeout(timer);
     }, []);
 
+    // Автопереключение карточки на мобильных каждые 5 секунд
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setActiveFeatureIndex(prev => (prev + 1) % 3);
+        }, 5000);
+        return () => clearInterval(intervalId);
+    }, []);
+
     // Закрываем всплывающие окна при клике вне их
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -67,7 +77,7 @@ export default function About() {
     return (
         <div>
             {/* First Section - Video Animation */}
-            <section className="relative bg-primary pt-24 sm:pt-32 pb-16 sm:pb-20 min-h-screen flex items-center">
+            <section className="relative bg-primary pt-34 sm:pt-32 pb-8 sm:pb-20 min-height: 90vh flex items-center ">
                 <div className="container mx-auto px-4 relative">
                     <div className="flex justify-center items-center">
                         <div 
@@ -122,48 +132,42 @@ export default function About() {
             </section>
 
             {/* Second Section - Cosmetic Hand */}
-            <section className="bg-second pt-12 sm:pt-20 pb-0 relative">
-                <div className="container mx-auto px-4 relative">
+            <section ref={cosmeticSectionRef} className="bg-second pt-12 sm:pt-20 pb-6 sm:pb-0 relative">
+                {/* Desktop background outside container to avoid clipping */}
+                <div
+                    className="hidden md:block absolute inset-0 z-0"
+                    style={{
+                        backgroundImage: 'url(/img/cosmetic.png)',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'auto 100%',
+                        backgroundPosition: '30% center'
+                    }}
+                />
+                <div className="container mx-auto px-4 relative z-10">
                     {/* Mobile Layout */}
-                    <div className="md:hidden">
-                        <div className="space-y-6">
-                            {/* First feature */}
-                            <div className="bg-primary rounded-2xl p-4">
-                                <div className="flex items-start">
-                                    <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">01</span>
-                                    <div>
-                                        <h3 className="text-hover font-normal font-primary text-lg">КОСМЕТИЧЕСКАЯ КИСТЬ</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">Версия кисти с тугоподвижными пальцами. Изготавливается под индивидуальные мерки, с подбором уникальной геометрии под каждого пользователя.</p>
-                                        </div>
-                                </div>
-                            </div>
+                    <div className="md:hidden relative min-h-[70vh] pb-24">
+                        {/* Background image for mobile */}
+                        <div className="absolute inset-0" style={{ backgroundImage: 'url(/img/cosmetic.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center bottom' }}></div>
 
-                            {/* Second feature */}
-                            <div className="bg-primary rounded-2xl p-4">
+                        {/* Single rotating feature card */}
+                        <div className="absolute bottom-4 left-0 right-0 z-10 px-4">
+                            <div className="bg-primary rounded-2xl p-4 shadow-xl">
                                 <div className="flex items-start">
-                                    <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">02</span>
+                                    <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">
+                                        {['01','02','03'][activeFeatureIndex]}
+                                    </span>
                                     <div>
-                                        <h3 className="text-hover font-normal font-primary text-lg">БЫСТРОСЪЕМНОЕ ЗАПЯСТЬЕ</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">Версия кисти с тугоподвижными пальцами. Изготавливается под индивидуальные мерки, с подбором уникальной геометрии под каждого пользователя.</p>
+                                        <h3 className="text-hover font-normal font-primary text-lg">
+                                            {activeFeatureIndex === 0 ? 'КОСМЕТИЧЕСКАЯ КИСТЬ' : activeFeatureIndex === 1 ? 'БЫСТРОСЪЕМНОЕ ЗАПЯСТЬЕ' : 'РОТАЦИЯ ЗАПЯСТЬЯ НА 360'}
+                                        </h3>
+                                        <p className="text-sm mt-1 font-primary text-gray-300">
+                                            {activeFeatureIndex === 0 && 'Версия кисти с тугоподвижными пальцами. Изготавливается под индивидуальные мерки, с подбором уникальной геометрии под каждого пользователя.'}
+                                            {activeFeatureIndex === 1 && 'Система быстросъемного запястья, позволяющая переключаться между биоэлектрической грейферной кистью и косметической пятипалой.'}
+                                            {activeFeatureIndex === 2 && 'Поворотная система запястья, позволяющая вращать запястье на 360 градусов.'}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Third feature */}
-                            <div className="bg-primary rounded-2xl p-4">
-                                <div className="flex items-start">
-                                    <span className="bg-[#cccccc] text-black w-8 h-8 rounded-md flex items-center justify-center font-normal font-primary mr-3 text-lg">03</span>
-                                    <div>
-                                        <h3 className="text-hover font-normal font-primary text-lg">РОТАЦИЯ ЗАПЯСТЬЯ НА 360</h3>
-                                        <p className="text-sm mt-1 font-primary text-gray-300">Система быстросъемного запястья, позволяющая переключаться между биоэлектрической грейферной кистью и косметической пятипалой.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Image at bottom on mobile */}
-                        <div className="mt-8 flex justify-center">
-                            <img src="./img/cosmetic.png" alt="Рука" className="w-full max-w-sm h-64 object-contain" />
                         </div>
                     </div>
 
@@ -171,10 +175,8 @@ export default function About() {
                     <div className="hidden md:block">
                         {/* Image and frames: all frames on the right, arrows to the left into the photo */}
                         <div className="grid grid-cols-[1fr_auto_1fr] grid-rows-3 gap-y-6 mt-16 items-center">
-                            {/* Photo spans rows */}
-                            <div className="row-span-3 flex items-end justify-center self-end overflow-hidden">
-                                <img src="./img/cosmetic.png" alt="Рука" className="w-[200%] sm:w-[140%] md:w-full h-[42rem] md:h-[48rem] object-bottom" />
-                            </div>
+                            {/* Background image handled at section level */}
+                            <div className="row-span-3" />
                             {/* Row 1: arrow from middle to left + right box */}
                             <div className="justify-self-center self-center flex items-center">
                                 <div className="mr-1 w-2 h-2 bg-[#cccccc] rotate-45"></div>
@@ -227,8 +229,8 @@ export default function About() {
             {/* Flexibility Section */}
             <section className="bg-black py-12 sm:py-16">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-hover font-second text-center mb-4">
-                        МНОГОКОПОНЕНТНЫЙ ПРОЦЕСС РАЗРАБОТКИ
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-hover font-second text-center mb-4 whitespace-normal break-words leading-tight">
+                        ПРОЦЕСС РАЗРАБОТКИ 
                     </h2>
                 </div>
             </section>
@@ -244,7 +246,7 @@ export default function About() {
                                     <img src="/img/danil and sen.jpg" alt="Фото 1" className="w-full h-48 object-cover" />
                                 </div>
                                 <div className="overflow-hidden rounded-lg">
-                                    <img src="/img/andrey work1.JPG" alt="Фото 2" className="w-full h-48 object-cover" />
+                                    <img src="/img/andrey work1.jpg" alt="Фото 2" className="w-full h-48 object-cover" />
                                 </div>
                                 <div className="overflow-hidden rounded-lg">
                                     <img src="/img/nikita work1.jpg" alt="Фото 3" className="w-full h-48 object-cover" />
@@ -258,7 +260,7 @@ export default function About() {
                                 <img src="/img/danil and sen.jpg" alt="Фото 1" className="w-full h-[26rem] md:h-[28rem] object-cover object-bottom" />
                             </div>
                             <div className="clip-path-2 overflow-hidden min-w-0">
-                                <img src="/img/andrey work1.JPG" alt="Фото 2" className="w-full h-[26rem] md:h-[28rem] object-cover object-bottom" />
+                                <img src="/img/andrey work1.jpg" alt="Фото 2" className="w-full h-[26rem] md:h-[28rem] object-cover object-bottom" />
                             </div>
                             <div className="clip-path-3 overflow-hidden min-w-0">
                                 <img src="/img/nikita work1.jpg" alt="Фото 3" className="w-full h-[26rem] md:h-[28rem] object-cover object-bottom" />
@@ -288,15 +290,9 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Video Section */}
-            <section className="bg-second py-12 sm:py-16">
+            {/* Product Section */}
+            <section className="bg-[#1a1a15] sm:bg-second py-12 sm:py-16">
                 <div className="container mx-auto px-4">
-                    <div className="text-center mb-6">
-                        <p className="text-xl sm:text-2xl md:text-3xl font-primary font-bold">
-                            
-                            
-                        </p>
-                    </div>
                     <div className="flex justify-center mb-6 sm:mb-8">
                         <img className="w-full max-w-4xl rounded-2xl shadow-2xl" src="/img/plata.jpg" controls playsInline />
                     </div>

@@ -144,14 +144,13 @@ export default function Home() {
             </section>
 
             {/* Team Photo */}
-            <section className="bg-second text-white py-12 sm:py-16">
-                <div className="container mx-auto flex flex-col items-center px-4">
-                    <img 
-                        src="/img/team.jpg" 
-                        alt="Общее фото команды" 
-                        className="w-1/2 max-w-4xl h-48 sm:h-64 md:h-80 object-cover shadow-md mb-6 sm:mb-8 rounded-lg"
+            <section className="bg-second text-white py-0">
+                <div className="w-full flex items-center justify-center">
+                    <img
+                        src="/img/team_home.jpg"
+                        alt="Общее фото команды"
+                        className="w-full h-[45vh] sm:h-[70vh] md:h-[80vh] object-contain"
                     />
-                    
                 </div>
             </section>
 
@@ -160,72 +159,82 @@ export default function Home() {
                 <div className="container mx-auto px-4">
                     <div className="w-full border-1 border-[#a1a19f] my-8 sm:my-12 md:my-16"></div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start">
-                                <img
-                                    src="/img/danil.jpg"
-                                    alt="Драгунов Даниил"
-                                    className="w-18 h-18 sm:w-20 sm:h-20 rounded-lg mb-3 sm:mb-0"
-                                />
-                                <div className="sm:ml-5 text-center sm:text-left">
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">
-                                        ДРАГУНОВ ДАНИИЛ
-                                    </h3>
-                                    <p className="text-xs sm:text-sm">
-                                        CEO. ИНЖЕНЕР-КОНСТРУКТОР. СТУДЕНТ ФТФ КУБГУ
-                                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                        {/* Card 1 */}
+                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer h-32 sm:h-auto" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
+                            {/* Mobile layout (row) */}
+                            <div className="h-full w-full flex flex-row items-center sm:items-start md:hidden">
+                                <div className="h-full mr-3 sm:mr-5 sm:h-20 sm:w-20" style={{ aspectRatio: '1 / 1' }}>
+                                    <img src="/img/danil.jpg" alt="Драгунов Даниил" className="w-full h-full rounded-lg object-cover" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">ДРАГУНОВ ДАНИИЛ</h3>
+                                    <p className="text-xs sm:text-sm">CEO. ИНЖЕНЕР-КОНСТРУКТОР. СТУДЕНТ ФТФ КУБГУ</p>
+                                </div>
+                            </div>
+                            {/* Desktop layout (vertical) */}
+                            <div className="hidden md:flex md:flex-col">
+                                <img src="/img/danil.jpg" alt="Драгунов Даниил" className="w-full h-auto rounded-lg mb-3" />
+                                <div className="text-left">
+                                    <h3 className="text-xl md:text-2xl font-bold font-second text-hover mb-2">ДРАГУНОВ ДАНИИЛ</h3>
+                                    <p className="text-sm">CEO. ИНЖЕНЕР-КОНСТРУКТОР. СТУДЕНТ ФТФ КУБГУ</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start">
-                                <img
-                                    src="/img/andrey1.jpg"
-                                    alt="Андрей Иванисов"
-                                    className="w-18 h-18 sm:w-20 sm:h-20 rounded-lg mb-3 sm:mb-0"
-                                />
-                                <div className="sm:ml-5 text-center sm:text-left">
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">
-                                        ИВАНИСОВ АНДРЕЙ
-                                    </h3>
-                                    <p className="text-xs sm:text-sm">
-                                        FULL-STACK РАЗРАБОТЧИК. ВЫПУСКНИК ФТФ КУБГУ
-                                    </p>
+                        {/* Card 2 */}
+                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer h-32 sm:h-auto" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
+                            <div className="h-full w-full flex flex-row items-center sm:items-start md:hidden">
+                                <div className="h-full mr-3 sm:mr-5 sm:h-20 sm:w-20" style={{ aspectRatio: '1 / 1' }}>
+                                    <img src="/img/andrey1.jpg" alt="Андрей Иванисов" className="w-full h-full rounded-lg object-cover" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">ИВАНИСОВ АНДРЕЙ</h3>
+                                    <p className="text-xs sm:text-sm">FULL-STACK РАЗРАБОТЧИК. ВЫПУСКНИК ФТФ КУБГУ</p>
+                                </div>
+                            </div>
+                            <div className="hidden md:flex md:flex-col">
+                                <img src="/img/andrey1.jpg" alt="Андрей Иванисов" className="w-full h-auto rounded-lg mb-3" />
+                                <div className="text-left">
+                                    <h3 className="text-xl md:text-2xl font-bold font-second text-hover mb-2">ИВАНИСОВ АНДРЕЙ</h3>
+                                    <p className="text-sm">FULL-STACK РАЗРАБОТЧИК. ВЫПУСКНИК ФТФ КУБГУ</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start">
-                                <img
-                                    src="/img/nik.jpg"
-                                    alt="Топорков Никита"
-                                    className="w-18 h-18 sm:w-20 sm:h-20 rounded-lg mb-3 sm:mb-0"
-                                />
-                                <div className="sm:ml-5 text-center sm:text-left">
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">
-                                        ТОПОРКОВ НИКИТА
-                                    </h3>
-                                    <p className="text-xs sm:text-sm">
-                                        EMBEDDED-ИНЖЕНЕР. СТУДЕНТ ФКТиПМ КУБГУ
-                                    </p>
+                        {/* Card 3 */}
+                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer h-32 sm:h-auto" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
+                            <div className="h-full w-full flex flex-row items-center sm:items-start md:hidden">
+                                <div className="h-full mr-3 sm:mr-5 sm:h-20 sm:w-20" style={{ aspectRatio: '1 / 1' }}>
+                                    <img src="/img/nik.jpg" alt="Топорков Никита" className="w-full h-full rounded-lg object-cover" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">ТОПОРКОВ НИКИТА</h3>
+                                    <p className="text-xs sm:text-sm">EMBEDDED-ИНЖЕНЕР. СТУДЕНТ ФКТиПМ КУБГУ</p>
+                                </div>
+                            </div>
+                            <div className="hidden md:flex md:flex-col">
+                                <img src="/img/nik.jpg" alt="Топорков Никита" className="w-full h-auto rounded-lg mb-3" />
+                                <div className="text-left">
+                                    <h3 className="text-xl md:text-2xl font-bold font-second text-hover mb-2">ТОПОРКОВ НИКИТА</h3>
+                                    <p className="text-sm">EMBEDDED-ИНЖЕНЕР. СТУДЕНТ ФКТиПМ КУБГУ</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start">
-                                <img
-                                    src="/img/sen.jpg"
-                                    alt="Горбушин Арсений"
-                                    className="w-18 h-18 sm:w-20 sm:h-20 rounded-lg mb-3 sm:mb-0"
-                                />
-                                <div className="sm:ml-5 text-center sm:text-left">
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">
-                                        ГОРБУШИН АРСЕНИЙ
-                                    </h3>
-                                    <p className="text-xs sm:text-sm">
-                                        МЛАДШИЙ ИНЖЕНЕР-ЭЛЕКТРОНЩИК. СТУДЕНТ ФТФ КУБГУ
-                                    </p>
+                        {/* Card 4 */}
+                        <div className="p-4 sm:p-6 rounded-4xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer h-32 sm:h-auto" style={{backgroundColor: 'rgb(47, 49, 53)'}}>
+                            <div className="h-full w-full flex flex-row items-center sm:items-start md:hidden">
+                                <div className="h-full mr-3 sm:mr-5 sm:h-20 sm:w-20" style={{ aspectRatio: '1 / 1' }}>
+                                    <img src="/img/sen.jpg" alt="Горбушин Арсений" className="w-full h-full rounded-lg object-cover" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-second text-hover mb-2">ГОРБУШИН АРСЕНИЙ</h3>
+                                    <p className="text-xs sm:text-sm">МЛАДШИЙ ИНЖЕНЕР-ЭЛЕКТРОНЩИК. СТУДЕНТ ФТФ КУБГУ</p>
+                                </div>
+                            </div>
+                            <div className="hidden md:flex md:flex-col">
+                                <img src="/img/sen.jpg" alt="Горбушин Арсений" className="w-full h-auto rounded-lg mb-3" />
+                                <div className="text-left">
+                                    <h3 className="text-xl md:text-2xl font-bold font-second text-hover mb-2">ГОРБУШИН АРСЕНИЙ</h3>
+                                    <p className="text-sm">МЛАДШИЙ ИНЖЕНЕР-ЭЛЕКТРОНЩИК. СТУДЕНТ ФТФ КУБГУ</p>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +258,7 @@ export default function Home() {
                         <div className="flex justify-center md:justify-start">
                             <Link 
                                 to="/contacts" 
-                                className="bg-white hover:bg-hover text-black text-lg sm:text-xl font-primary font-[600] w-full sm:w-auto py-3 px-6 rounded-4xl inline-block transition-colors duration-200 cursor-pointer text-center"
+                                className="bg-white hover:bg-hover text-black text-lg sm:text-xl font-primary font-[600] w-auto py-3 px-6 rounded-4xl inline-block transition-colors duration-200 cursor-pointer text-center"
                             >
                                 КОНТАКТЫ
                             </Link>

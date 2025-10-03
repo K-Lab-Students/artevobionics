@@ -36,12 +36,12 @@ export default function Nav() {
                 {/* Brand */}
                 <Link
                     to="/"
-                    className="flex items-center text-white hover:text-hover font-bold"
+                    className="flex items-center text-white hover:text-hover font-bold shrink-0"
                 >
                     <img
                         src="/img/media/logo/l2.png"
                         alt="Logo ARTEVO BIONICS"
-                        className="h-12 w-auto"
+                        className="h-10 sm:h-12 w-auto object-contain shrink-0"
                     />
                 </Link>
 

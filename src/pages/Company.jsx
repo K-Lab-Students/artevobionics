@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 
 export default function Company() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div>
             {/* Company Section */}
-            <section className="pt-24 sm:pt-32 bg-primary min-h-screen pb-16">
+            <section className="pt-30 sm:pt-48 bg-primary min-h-screen pb-8 sm:pb-12">
                 <div className="container mx-auto px-4">
                     {/* Mobile Layout */}
                     <div className="md:hidden">
@@ -20,16 +23,13 @@ export default function Company() {
                         </div>
 
                         <div className="bg-second rounded-3xl mb-8">
-                            <p className="px-4 py-6 text-left font-primary text-sm sm:text-base">
-                                ООО «АРТЭВО БИОНИКС» (ОГРН 4167893778839)<br/>
-                                ИНН 2312330551<br/>
-                                КПП 231201001<br/>
-                                Юр. адрес: 35000 г. Краснодар, ул. Селезнева 150, кв. 733<br/><br/>
-                                Деятельность осуществляется при грантовой и<br/>
-                                информационной поддержке Фонда содействия<br/>
-                                развитию малых форм предприятий в<br/>
-                                научно-технической сфере и Лаборатории робототехники и<br/>
-                                мехатроники Кубанского государственного университета
+                            <p className="px-4 py-6 text-left font-primary text-sm sm:text-base md:text-lg break-words leading-relaxed">
+                                ООО «АРТЭВО БИОНИКС»<br/>
+                                (ОГРН 1242300056646) <br/> 
+                                ИНН 2312330551. <br/>
+                                КПП 231201001. <br/> 
+                                Юр. адрес: 35000 г. Краснодар, ул. Селезнева 150, кв. 733.<br/><br/>
+                                Деятельность осуществляется при грантовой и информационной поддержке Фонда содействия развитию малых форм предприятий в научно-технической сфере и Лаборатории робототехники и мехатроники Кубанского государственного университета.
                             </p>
                         </div>
 
@@ -64,7 +64,7 @@ export default function Company() {
 
                         <div className="flex mt-8">
                             <div className="w-1/2 bg-second rounded-3xl"><p className="px-5 py-10 text-left font-primary text-base ">
-                              ООО «АРТЭВО БИОНИКС» (ОГРН 4167893778839)<br/>
+                              ООО «АРТЭВО БИОНИКС» (ОГРН 1242300056646)<br/>
                               ИНН 2312330551<br/>
                               КПП 231201001<br/>
                               Юр. адрес: 35000 г. Краснодар, ул. Селезнева 150, кв. 733<br/><br/>

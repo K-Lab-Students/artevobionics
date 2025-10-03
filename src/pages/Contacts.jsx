@@ -6,6 +6,7 @@ export default function Contacts() {
     const [contentHeight, setContentHeight] = useState(0);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const measure = () => {
             if (leftBlockRef.current) {
                 setContentHeight(leftBlockRef.current.getBoundingClientRect().height);
@@ -18,7 +19,7 @@ export default function Contacts() {
     return (
         <div>
             {/* Contacts Section */}
-            <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-primary min-h-screen">
+            <section className="pt-30 sm:pt-40 pb-8 sm:pb-12 bg-primary min-height: 90vh">
                 <div className="container mx-auto px-4">
                     {/* Mobile Layout */}
                     <div className="md:hidden">

@@ -30,11 +30,11 @@ export default function Footer() {
                     </div>
                     <div className="text-center sm:text-right">
                         <p className="text-xs sm:text-sm font-primary text-white">
-                            ООО «АРТЭВО БИОНИКС» (ОГРН 4167893778839) 35000
+                            ООО «АРТЭВО БИОНИКС» (ОГРН 1242300056646) 
                             <br />
-                            г. Краснодар, ул. Селезнева 3478
+                            г. Краснодар, ул. Ставропольская 149
                             <br />
-                            +7 (918) 123 45 56
+                            +7 (918) 630 07 68
                         </p>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ export default function News() {
             {/* News Section */}
             <section className="pt-32 sm:pt-40 bg-primary pb-16">
                 <div className="container mx-auto px-4">
-                    <h2 className="font-second text-3xl sm:text-4xl md:text-5xl font-bold text-hover mb-16 sm:mb-32 overflow-visible whitespace-nowrap">
+                    <h2 className="font-second text-3xl sm:text-4xl md:text-5xl font-bold text-hover mb-16 sm:mb-32 overflow-visible whitespace-normal md:whitespace-nowrap break-words leading-tight">
                         НОВОСТИ ПРОЕКТА
                     </h2>
                     
@@ -26,14 +26,14 @@ export default function News() {
                                 <div className="news-item">
                                     <div className="mb-4">
                                         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                                            <div style={{width: '100%', height: '192px', backgroundColor: '#f0f0f0', border: '2px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                                <img 
-                                                    src="/img/news/old.jpg" 
-                                                    alt="Демонстрация первого прототипа Фаланга - 1" 
-                                                    style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'cover'}}
+                                            <div className="w-full h-48">
+                                                <img
+                                                    src="/img/news/old.jpg"
+                                                    alt="Демонстрация первого прототипа Фаланга - 1"
+                                                    className="w-full h-full object-cover"
                                                     onError={(e) => {
                                                         console.error('Ошибка загрузки изображения:', e.target.src);
-                                                        e.target.parentElement.innerHTML = '<div style="color: #ff0000; text-align: center;">Ошибка загрузки изображения</div>';
+                                                        e.target.parentElement.innerHTML = '<div style=\"color: #ff0000; text-align: center;\">Ошибка загрузки изображения</div>';
                                                     }}
                                                     onLoad={() => console.log('Изображение загружено:', '/img/news/old.jpg')}
                                                 />
@@ -55,14 +55,14 @@ export default function News() {
                                 <div className="news-item">
                                     <div className="mb-4">
                                         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                                            <div style={{width: '100%', height: '192px', backgroundColor: '#f0f0f0', border: '2px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                                <img 
-                                                    src="/img/news/congress.jpg" 
-                                                    alt="Участие в выставке на III Конгрессе молодых учёных в Сириусе" 
-                                                    style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'cover'}}
+                                            <div className="w-full h-48">
+                                                <img
+                                                    src="/img/news/congress.jpg"
+                                                    alt="Участие в выставке на III Конгрессе молодых учёных в Сириусе"
+                                                    className="w-full h-full object-cover"
                                                     onError={(e) => {
                                                         console.error('Ошибка загрузки изображения:', e.target.src);
-                                                        e.target.parentElement.innerHTML = '<div style="color: #ff0000; text-align: center;">Ошибка загрузки изображения</div>';
+                                                        e.target.parentElement.innerHTML = '<div style=\"color: #ff0000; text-align: center;\">Ошибка загрузки изображения</div>';
                                                     }}
                                                     onLoad={() => console.log('Изображение загружено:', '/img/news/congress.jpg')}
                                                 />
@@ -84,14 +84,14 @@ export default function News() {
                                 <div className="news-item">
                                     <div className="mb-4">
                                         <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-                                            <div style={{width: '100%', height: '192px', backgroundColor: '#f0f0f0', border: '2px solid #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                                <img 
-                                                    src="/img/news/bioprom.jpg" 
-                                                    alt="Создание прототипа второй ревизии устройства, участие в выставке БИОПРОМ в г. Геленджик" 
-                                                    style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'cover'}}
+                                            <div className="w-full h-48">
+                                                <img
+                                                    src="/img/news/bioprom.jpg"
+                                                    alt="Создание прототипа второй ревизии устройства, участие в выставке БИОПРОМ в г. Геленджик"
+                                                    className="w-full h-full object-cover"
                                                     onError={(e) => {
                                                         console.error('Ошибка загрузки изображения:', e.target.src);
-                                                        e.target.parentElement.innerHTML = '<div style="color: #ff0000; text-align: center;">Ошибка загрузки изображения</div>';
+                                                        e.target.parentElement.innerHTML = '<div style=\"color: #ff0000; text-align: center;\">Ошибка загрузки изображения</div>';
                                                     }}
                                                     onLoad={() => console.log('Изображение загружено:', '/img/news/bioprom.jpg')}
                                                 />
@@ -207,8 +207,8 @@ export default function News() {
                     </div>
                 </div>
 
-                <div className="pt-16 container mx-auto items-center space-y-8 md:space-y-0">
-                    <div className="mx-4 w-full border-1 border-[#a1a19f]"></div>
+                <div className="pt-1 container mx-auto items-center space-y-8 md:space-y-0">
+                    <div className="mx-4 w-full border-1 border-[#a1a19f] hidden md:block"></div>
                 </div>
 
             </section>
